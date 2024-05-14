@@ -53,6 +53,14 @@
 **# X-Forwarded-For header Spoofing for a account lockout session with NGINX**
 
 > The scenario of X-Forwaded-For spoofing can be vulnerable to functionalities as lockout functionality. If there is multiple login attempts then such scenario should be encounterd by adding throttling or lockout for a certain period of time. But this X-forwaded-For is set in a wrong way. Then an intruder can break this functionalty giving intruder to make multiple requests.
+
 > To resolve this we have to set this header to be disabled.
 
-    
+> In the NGINX  conf file add this to the /location to not intrude on this.
+
+    proxy_set_header X-Forwarded-For "";
+
+> In this case we have disabled this header by adding above header.
+
+---
+
