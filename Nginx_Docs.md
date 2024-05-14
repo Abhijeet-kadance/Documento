@@ -47,3 +47,12 @@
 > This is due to the fact that nginx ask us to serve the custom error page before redirection. 
 
 > Therefore we have created location / { try_files $uri @redirect_to_https; }, here in this we return 301 ro https (443) port.
+
+---
+
+**# X-Forwarded-For header Spoofing for a account lockout session with NGINX**
+
+> The scenario of X-Forwaded-For spoofing can be vulnerable to functionalities as lockout functionality. If there is multiple login attempts then such scenario should be encounterd by adding throttling or lockout for a certain period of time. But this X-forwaded-For is set in a wrong way. Then an intruder can break this functionalty giving intruder to make multiple requests.
+> To resolve this we have to set this header to be disabled.
+
+    
